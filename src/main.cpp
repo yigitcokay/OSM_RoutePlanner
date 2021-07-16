@@ -56,11 +56,26 @@ int main(int argc, const char **argv)
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below in place of 10, 10, 90, 90.
     float start_x = 0.0f; float start_y = 0.0f; float end_x = 0.0f; float end_y = 0.0f; 
-    std::cout << "Please enter the X & Y coordinates of your starting and ending points respectively" << "\n";
-    std::cout << "Start point X: "; std::cin >> start_x;
-    std::cout << "Start point Y: "; std::cin >> start_y; 
+    std::cout << "Please enter the X & Y coordinates of your starting and ending points respectively, the coordinate values must be between 0 and 100: " << "\n";
+    do {
+        std::cout << "Start point X: "; std::cin >> start_x;
+    }
+    while(start_x < 0 || start_x > 100);
+
+    do {
+        std::cout << "Start point Y: "; std::cin >> start_y;
+    }
+    while(start_y < 0 || start_y > 100);
+
+    do {
     std::cout << "End point X: "; std::cin >> end_x; 
-    std::cout << "End point X: "; std::cin >> end_y; 
+    }
+    while(end_x < 0 || end_x > 100);
+
+    do {
+    std::cout << "End point X: "; std::cin >> end_y;
+    }
+    while(end_y < 0 || end_y > 100);
 
 
     // Build Model.
